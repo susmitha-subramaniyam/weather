@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nature Weather | Weather Dashboard</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="weather-container">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <div class="logo">
+                <i class="fa-solid fa-cloud-sun"></i>
+                <h2>Nature<span>Weather</span></h2>
+            </div>
+
+            <div class="header-date" id="currentDate">
+                Loading date...
+            </div>
+
+        </header>
+
+        <!-- SEARCH SECTION -->
+        <section class="search-section">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Search your city..."
+                >
+
+                <button id="searchBtn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Search
+                </button>
+
+            </div>
+
+            <p id="errorMessage"></p>
+
+        </section>
+
+        <!-- MAIN WEATHER -->
+        <main>
+
+            <section class="main-weather">
+
+                <div class="weather-left">
+
+                    <p class="location-label">
+                        CURRENT WEATHER
+                    </p>
+
+                    <h1 id="cityName">Chennai</h1>
+
+                    <p id="countryName">India</p>
+
+                    <div class="temperature">
+
+                        <h2 id="temperature">--°</h2>
+
+                        <span id="weatherIcon">
+                            <i class="fa-solid fa-cloud-sun"></i>
+                        </span>
+
+                    </div>
+
+                    <h3 id="weatherDescription">
+                        Loading weather...
+                    </h3>
+
+                    <p class="feels-like">
+                        Feels like
+                        <span id="feelsLike">--°</span>
+                    </p>
+
+                </div>
+
+                <div class="weather-right">
+
+                    <div class="sun-decoration">
+                        <i class="fa-solid fa-sun"></i>
+                    </div>
+
+                    <div class="weather-message">
+
+                        <h3>Enjoy the day!</h3>
+
+                        <p>
+                            Stay connected with nature
+                            and know your weather.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- TODAY HIGHLIGHTS -->
+            <section class="details-section">
+
+                <h2 class="section-title">
+                    Today's Highlights
+                </h2>
+
+                <div class="details-grid">
+
+                    <!-- HUMIDITY -->
+                    <div class="detail-card">
+
+                        <div class="detail-heading">
+                            <i class="fa-solid fa-droplet"></i>
+                            <span>Humidity</span>
+                        </div>
+
+                        <h2 id="humidity">--%</h2>
+
+                        <p>Air moisture level</p>
+
+                    </div>
+
+                    <!-- WIND -->
+                    <div class="detail-card">
+
+                        <div class="detail-heading">
+                            <i class="fa-solid fa-wind"></i>
+                            <span>Wind Speed</span>
+                        </div>
+
+                        <h2 id="windSpeed">-- km/h</h2>
+
+                        <p>Current wind speed</p>
+
+                    </div>
+
+                    <!-- VISIBILITY -->
+                    <div class="detail-card">
+
+                        <div class="detail-heading">
+                            <i class="fa-solid fa-eye"></i>
+                            <span>Visibility</span>
+                        </div>
+
+                        <h2 id="visibility">-- km</h2>
+
+                        <p>Outdoor visibility</p>
+
+                    </div>
+
+                    <!-- PRESSURE -->
+                    <div class="detail-card">
+
+                        <div class="detail-heading">
+                            <i class="fa-solid fa-gauge-high"></i>
+                            <span>Pressure</span>
+                        </div>
+
+                        <h2 id="pressure">-- hPa</h2>
+
+                        <p>Atmospheric pressure</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- SUNRISE AND SUNSET -->
+            <section class="sun-section">
+
+                <h2 class="section-title">
+                    Sunrise & Sunset
+                </h2>
+
+                <div class="sun-grid">
+
+                    <!-- SUNRISE -->
+                    <div class="sun-card">
+
+                        <div class="sun-icon sunrise-icon">
+                            <i class="fa-solid fa-sun"></i>
+                        </div>
+
+                        <div>
+                            <p>Sunrise</p>
+                            <h2 id="sunrise">--:--</h2>
+                            <span>Sun comes up</span>
+                        </div>
+
+                    </div>
+
+                    <!-- SUNSET -->
+                    <div class="sun-card">
+
+                        <div class="sun-icon sunset-icon">
+                            <i class="fa-solid fa-moon"></i>
+                        </div>
+
+                        <div>
+                            <p>Sunset</p>
+                            <h2 id="sunset">--:--</h2>
+                            <span>Sun goes down</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- WEEKLY FORECAST -->
+            <section class="forecast-section">
+
+                <div class="section-header">
+
+                    <h2 class="section-title">
+                        7 Days Forecast
+                    </h2>
+
+                    <span>Weekly Weather</span>
+
+                </div>
+
+                <div class="weekly-container" id="weeklyForecast">
+
+                    <p>Loading weekly forecast...</p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+
+            <p>
+                Made with
+                <i class="fa-solid fa-heart"></i>
+                for nature lovers
+            </p>
+
+            <p>Nature Weather © 2026</p>
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
